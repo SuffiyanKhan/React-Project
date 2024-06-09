@@ -12,6 +12,7 @@ import Reviews from "./SideMenuPages/Reviews.jsx"
 import Product from "./SideMenuPages/Products.jsx"
 import Categories from "./SideMenuPages/Categories.jsx"
 import DashboardNavbar from "./Components/DashboardNavbar/DashboardNavbar.jsx"
+import AddProduct from "./SideMenuPages/AddProduct.jsx"
 
 function App() {
   const router = createBrowserRouter([
@@ -52,6 +53,9 @@ function App() {
     }, {
       path: '/categories',
       element: <><DashboardNavbar ><Categories /></DashboardNavbar> </>
+    }, {
+      path: '/addproduct',
+      element: <><DashboardNavbar ><AddProduct /></DashboardNavbar> </>
     }
   ])
 

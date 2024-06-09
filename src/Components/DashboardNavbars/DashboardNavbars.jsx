@@ -5,7 +5,7 @@ import ProfileButton from "../ProfileButton/ProfileButton";
 function DashboardNavbars() {
     return (
         <>
-            <nav className="navbar py-3 bg-white sticky-top">
+            <nav className="navbar py-3 px-4 bg-white sticky-top">
                 <div className="container-fluid">
                     <div className="d-flex align-items-center">
                         <div className="d-xl-none">

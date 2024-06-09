@@ -28,7 +28,8 @@
     "react-dom": "^18.2.0",
     "react-jquery-plugin": "^1.1.7",
     "react-router-dom": "^6.23.0",
-    "recharts": "^2.12.7"
+    "recharts": "^2.12.7",
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

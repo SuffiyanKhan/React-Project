@@ -1,7 +1,12 @@
+import DashboardProductHeader from "../Components/DashboardProductHeader/DashboardProductHeader"
+import DashboardProductTable from "../Components/DashboardProductTable/DashboardProductTable"
 
 function Product() {
   return (
-    <div>Product</div>
+    <>
+      <DashboardProductHeader />
+      <DashboardProductTable />
+    </>
   )
 }
 

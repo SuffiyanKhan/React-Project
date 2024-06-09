@@ -3,9 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import './SideMenuList.css';
 import SideMenuListComingSoon1 from '../SideMenuListComingSoon/SideMenuListComingSoon1/SideMenuListComingSoon1';
 import SideMenuListComingSoon2 from '../SideMenuListComingSoon/SideMenuListComingSoon2/SideMenuListComingSoon2';
+
 function SideMenuList() {
   const location = useLocation();
   const [activeLink, setActiveLink] = useState(location.pathname);
+
   const handleLinkClick = (path) => {
     setActiveLink(path);
   };
@@ -25,6 +27,9 @@ function SideMenuList() {
             </span>
             Dashboard
           </Link>
+        </div>
+        <div className="p-4 fw-semibold">
+          Store Managements
         </div>
         <div>
           <Link
@@ -65,6 +70,7 @@ function SideMenuList() {
             Orders
           </Link>
         </div>
+
         <div>
           <Link
             to="/sellers"
