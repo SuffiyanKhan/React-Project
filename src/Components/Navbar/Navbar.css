@@ -1,0 +1,13 @@
+@media (min-width:0px) and (max-width:992px) {
+    .hide{
+        display: none !important;
+
+    }
+    .navigation{
+        display: none !important;
+    }
+    .show{
+        display: block !important;
+    }
+}
+

@@ -1,0 +1,9 @@
+.footer-para:hover{
+    color: #0cac0c;
+    cursor: pointer;
+}
+
+.para{
+    font-size: 13px;
+    color: gray;
+}

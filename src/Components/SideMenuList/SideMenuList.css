@@ -1,0 +1,13 @@
+.side-menu-list{
+    background-color: transparent !important;
+    border: none;
+    border-style: none !important;
+}
+.side-menu-list:hover{
+    background-color: lightgray !important;
+}
+.side-menu-list.active {
+    background-color: #c4f0d0 !important; 
+    color: #417e4d !important;
+  }
+  

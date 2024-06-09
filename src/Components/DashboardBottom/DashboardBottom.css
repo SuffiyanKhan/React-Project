@@ -1,0 +1,25 @@
+.dashboard-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  
+  .dashboard-item {
+    flex: 0 0 auto;
+    width: 23.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin-right: 1rem;
+  }
+  
+  @media (min-width: 1470px) { 
+    .dashboard-row {
+      flex-wrap: wrap;
+      overflow-x: hidden;
+    }
+  
+    .dashboard-item {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+  }
+  
