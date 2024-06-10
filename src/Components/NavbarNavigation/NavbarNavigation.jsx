@@ -1,9 +1,21 @@
 // import MegaPage from '../MegaPage/MegaPage'
 import { Link } from 'react-router-dom'
 import './NavbarNavigation.css'
+import { CheckAuthentication } from '../../Services/checkAuthentication'
+import { useEffect, } from 'react'
+import { useGlobalState } from '../../Context/Context'
 
 
 function NavbarNavigation() {
+    const { checkAuthentication, setCheckAuthentication } = useGlobalState()
+    useEffect(() => {
+        (async () => {
+            const checkAuth = await CheckAuthentication()
+            if (!checkAuth) {
+                setCheckAuthentication(false)
+            }
+        })()
+    }, [])
     return (
         <>
             <div className="container navigation mt-4  ">
@@ -31,50 +43,59 @@ function NavbarNavigation() {
                 </button>
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-felx align-items-center">
                     <li className="nav-item">
-                        <Link className="nav-link fw-bold text-dark ms-4" style={{ fontSize: "15px" }} aria-current="page" to={'/'} >
+                        <Link className="nav-link fw-bold text-dark ms-4" aria-current="page" to={'/'} >
                             Home
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link fw-bold text-dark" style={{ fontSize: "15px" }} to={'/o'}>
+                        <Link className="nav-link fw-bold text-dark" to={'/o'}>
                             Shop Cart
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link fw-bold text-dark " style={{ fontSize: "15px" }} aria-current="page"  >
+                        <Link className="nav-link fw-bold text-dark " aria-current="page"  >
                             About us
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link fw-bold text-dark " style={{ fontSize: "15px" }} aria-current="page"  >
+                        <Link className="nav-link fw-bold text-dark " aria-current="page"  >
                             Blogs
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link fw-bold text-dark " style={{ fontSize: "15px" }} aria-current="page"  >
+                        <Link className="nav-link fw-bold text-dark " aria-current="page"  >
                             Contact Us
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link fw-semibold text-dark" href="#">
-                            Account
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link fw-semibold text-dark" to={'/dashboard'}>
-                            Dashboard
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link fw-semibold text-dark" to={'/signup'}>
-                            Signup
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link fw-semibold text-dark" to={'/login'}>
-                            Login
-                        </Link>
-                    </li>
+                    {
+                        checkAuthentication ? (
+                            <>
+                                <li className="nav-item">
+                                    <a className="nav-link fw-bold text-dark" href="#">
+                                        Account
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link fw-bold text-dark" to={'/dashboard'}>
+                                        Dashboard
+                                    </Link>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li className="nav-item">
+                                    <Link className="nav-link fw-bold text-dark" to={'/signup'}>
+                                        Signup
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link fw-bold text-dark" to={'/login'}>
+                                        Login
+                                    </Link>
+                                </li>
+                            </>
+                        )
+                    }
                 </ul>
             </div>
         </>

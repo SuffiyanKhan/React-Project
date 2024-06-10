@@ -6,7 +6,7 @@ import { AddToCard } from '../../Services/addToCard';
 import { useGlobalState } from '../../Context/Context';
 
 function PopularProducts() {
-    const { productCounting, setProductCounting } = useGlobalState()
+    const { productCounting, setProductCounting, checkAuthentication } = useGlobalState()
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
@@ -27,8 +27,11 @@ function PopularProducts() {
 
     }
     const save = (img, title, price) => {
-        AddToCard(img, title, price)
-        setProductCounting(productCounting + 1)
+        if (checkAuthentication) {
+            AddToCard(img, title, price)
+            setProductCounting(productCounting + 1)
+        }
+        return alert("Please Signup First")
     }
 
     return (

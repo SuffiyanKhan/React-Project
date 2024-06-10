@@ -95,7 +95,7 @@ function DetailPage() {
     const { id } = useParams(); // Corrected destructuring
     const [data, setData] = useState(null);
     const [imagesLoaded, setImagesLoaded] = useState(false); // State to handle image loading
-    const { productCounting, setProductCounting } = useGlobalState()
+    const { productCounting, setProductCounting, checkAuthentication } = useGlobalState()
 
     useEffect(() => {
         (async () => {
@@ -126,8 +126,11 @@ function DetailPage() {
         return <Loader />;
     }
     const save = (img, title, price) => {
-        AddToCard(img, title, price)
-        setProductCounting(productCounting + 1)
+        if(checkAuthentication){
+            AddToCard(img, title, price)
+            setProductCounting(productCounting + 1)
+        }
+       return alert("Please Signup First")
     }
     return (
         <div className="container mt-5">
