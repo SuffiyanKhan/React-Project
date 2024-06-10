@@ -76,7 +76,7 @@ function Footer() {
                     </div>
                 </div>
                 <hr className='mt-4' />
-                <div className="mt-1 py-2  d-flex justify-content-between">
+                <div className="mt-1 py-2 col-sm-12 w-100  d-flex justify-content-between flex-wrap ">
                     <div className="d-flex">
                         <p className='me-4'>Payment Partners</p>
                         <a className='me-2' href="#">
@@ -95,7 +95,7 @@ function Footer() {
                             <img src={imgae4} alt="" />
                         </a>
                     </div>
-                    <div className="d-flex align-items-center w-50 justify-content-center">
+                    <div className="d-flex w-100 align-items-center w-50 justify-content-center">
                         <p>Get deliveries with FreshCart</p>
                         <div className="">
 

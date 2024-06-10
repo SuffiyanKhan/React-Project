@@ -8,7 +8,7 @@ import fc6 from '../../assets/fc-6.jpg'
 import './SetFeatureCategory.css'
 function SetFeatureCategory() {
     return (
-        <div className="container">
+        <div className="container mt-5">
         <h2>Featured Categories</h2>
         <div className="row my-5" style={{ overflowX: 'auto' }}>
             <div className="col-lg-6 col-md-4 col-sm-12 d-flex justify-content-evenly">

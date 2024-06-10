@@ -5,10 +5,10 @@ import SearchNavbar from '../SearchNavbar/SearchNavbar'
 import './Navbar.css'
 function Navbar() {
     return (
-        <nav className="navbar navbar-expand-lg py-3 sticky-top flex-column border-bottom" style={{backgroundColor:"white"}} >
-            <div className="container ">
-                <a className="navbar-brand" href="#">
-                    <img src={logo} alt="logo" />
+        <nav className="navbar navbar-expand-lg py-3 flex-column sticky-top border-bottom" style={{backgroundColor:"white"}} >
+            <div className="container">
+                <a className="navbar-brand " href="#">
+                    <img src={logo} style={{width:"130px"}} alt="logo" />
                 </a>
                 <div className=" collapse navbar-collapse " >
                     <SearchNavbar />
@@ -16,7 +16,7 @@ function Navbar() {
                         <Buttons />
                     </ul>
                 </div>
-                <div className="d-none show">
+                <div className="d-xl-none d-lg-none d-md-block d-flex flex-wrap">
                     <Buttons />
                 </div>
             </div>

@@ -12,7 +12,7 @@ function SideBar() {
 
     return (
         <>
-            <Button variant="light" className='ms-2' style={{backgroundColor:'transparent',border:'none',color:'#0cac0c'}} onClick={handleShow}>
+            <Button variant="light" style={{backgroundColor:'transparent',border:'none',color:'#0cac0c'}} onClick={handleShow}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={32}
