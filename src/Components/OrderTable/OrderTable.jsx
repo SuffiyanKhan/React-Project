@@ -13,12 +13,15 @@ function OrderTable() {
     };
     return (
         <>
+        <div className="container">
+            <div className="row">
+                <div className="col-12">
             <table className="table table-border">
                 <thead>
                     <tr>
                         <th>S.No</th>
                         <th>Product Image</th>
-                        <th>Product Title</th>
+                        <th className="">Product Title</th>
                         <th>Product Price</th>
                         <th>Product Quantity</th>
                         <th>Action</th>
@@ -31,7 +34,7 @@ function OrderTable() {
                             <td>
                                 <img src={data.img} width={60} alt={data.title} />
                             </td>
-                            <td>{data.title}</td>
+                            <td className="">{data.title}</td>
                             <td>{data.price.toFixed(2)}</td>
                             <td>{data.quantity}</td>
                             <td>
@@ -41,6 +44,9 @@ function OrderTable() {
                     ))}
                 </tbody>
             </table>
+                </div>
+            </div>
+        </div>
         </>
     )
 }

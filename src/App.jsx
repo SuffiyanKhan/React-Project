@@ -13,6 +13,11 @@ import Product from "./SideMenuPages/Products.jsx"
 import Categories from "./SideMenuPages/Categories.jsx"
 import DashboardNavbar from "./Components/DashboardNavbar/DashboardNavbar.jsx"
 import AddProduct from "./SideMenuPages/AddProduct.jsx"
+import AddCategory from "./SideMenuPages/AddCategory.jsx"
+import Signup from "./Pages/Signup.jsx"
+import Login from "./Pages/Login.jsx"
+import SignupLoginNavbar from "./Components/SignupLoginNavbar/SignupLoginNavbar.jsx"
+import Footer from "./Components/Footer/Footer.jsx"
 
 function App() {
   const router = createBrowserRouter([
@@ -56,6 +61,15 @@ function App() {
     }, {
       path: '/addproduct',
       element: <><DashboardNavbar ><AddProduct /></DashboardNavbar> </>
+    }, {
+      path: '/addcategory',
+      element: <><DashboardNavbar ><AddCategory /></DashboardNavbar> </>
+    }, {
+      path: '/signup',
+      element: <><SignupLoginNavbar /><Signup /><Footer/> </>
+    }, {
+      path: '/login',
+      element: <><SignupLoginNavbar /><Login /><Footer/> </>
     }
   ])
 

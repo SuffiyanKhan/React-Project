@@ -2,14 +2,14 @@
     background-color: #00b02a;
 }
 .bg-btn-color:hover{
-    background-color: #00b02a;
+    background-color: #00b02a !important;
 
 }
 .bg-btn-color:focus{
-    background-color: #00b02a;
+    background-color: #00b02a !important;
     
 }
 .bg-btn-color:active{
-    background-color: #00b02a;
+    background-color: #00b02a !important;
     
 }

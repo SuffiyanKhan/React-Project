@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import logo from '../../assets/logo.svg'
 import './SideBar.css'
+import { Link } from 'react-router-dom';
 
 function SideBar() {
     const [show, setShow] = useState(false);
@@ -12,7 +13,7 @@ function SideBar() {
 
     return (
         <>
-            <Button variant="light" style={{backgroundColor:'transparent',border:'none',color:'#0cac0c'}} onClick={handleShow}>
+            <Button variant="light" style={{ backgroundColor: 'transparent', border: 'none', color: '#0cac0c' }} onClick={handleShow}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width={32}
@@ -105,9 +106,9 @@ function SideBar() {
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link fw-semibold text-dark" href="#">
+                                <Link className="nav-link fw-semibold text-dark" to={'/dashboard'}>
                                     Dashboard
-                                </a>
+                                </Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link fw-semibold text-dark" href="#">

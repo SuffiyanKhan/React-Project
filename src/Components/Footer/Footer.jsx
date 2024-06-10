@@ -109,7 +109,7 @@ function Footer() {
                     </div>
                 </div>
                 <hr />
-                <div className='mt-2 d-flex justify-content-between'>
+                <div className='mt-2 d-flex justify-content-between flex-wrap'>
                     <div className="">
                     <p className='para fw-semibold'>© 2022 - 2024 FreshCart eCommerce HTML Template. All rights reserved. Powered by <span style={{color:"#0cac0c"}} >Codescandy</span>.</p>
                     </div>

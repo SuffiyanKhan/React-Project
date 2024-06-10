@@ -7,7 +7,6 @@ const DashboardProductStatus = () => (
                 <option value="deactive">Deactive</option>
                 <option value="draft">Draft</option>
             </select>
-
         </div>
     </>
 );

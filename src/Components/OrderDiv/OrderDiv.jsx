@@ -15,7 +15,7 @@ function OrderDiv() {
     }, []);
     return (
         <div className="container my-3">
-            <div className="row  " >
+            <div className="row " >
                 <div className={`col-lg-6 col-md-6 col-sm-12 image1 h-50  py-5 ps-5 `}>
                     <div className="">
                         <h3 className=' fw-bold'>Fruits & Vegetables</h3>

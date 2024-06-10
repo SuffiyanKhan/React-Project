@@ -1,7 +1,12 @@
+import DashboardCategory from "../Components/DashboardCategory/DashboardCategory"
+import DashboardCategoryTable from "../Components/DashboardCategoryTable/DashboardCategoryTable"
 
 function Categories() {
   return (
-    <div>Categories</div>
+    <>
+      <DashboardCategory/>
+      <DashboardCategoryTable/>
+    </>
   )
 }
 

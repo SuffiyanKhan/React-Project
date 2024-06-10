@@ -29,31 +29,31 @@ function NavbarNavigation() {
                         All Department
                     </span>
                 </button>
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-felx align-items-center">
                     <li className="nav-item">
-                        <Link className="nav-link fw-semibold text-dark ms-4" aria-current="page" to={'/'} >
+                        <Link className="nav-link fw-bold text-dark ms-4" style={{ fontSize: "15px" }} aria-current="page" to={'/'} >
                             Home
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link fw-semibold text-dark" to={'/o'}>
+                        <Link className="nav-link fw-bold text-dark" style={{ fontSize: "15px" }} to={'/o'}>
                             Shop Cart
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link fw-semibold text-dark" href="#">
-                            Stores
-                        </a>
+                        <Link className="nav-link fw-bold text-dark " style={{ fontSize: "15px" }} aria-current="page"  >
+                            About us
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link fw-semibold text-dark" href="#">
-                            Mega menu
-                        </a>
+                        <Link className="nav-link fw-bold text-dark " style={{ fontSize: "15px" }} aria-current="page"  >
+                            Blogs
+                        </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link fw-semibold text-dark" href="#">
-                            Pages
-                        </a>
+                        <Link className="nav-link fw-bold text-dark " style={{ fontSize: "15px" }} aria-current="page"  >
+                            Contact Us
+                        </Link>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link fw-semibold text-dark" href="#">
@@ -66,12 +66,16 @@ function NavbarNavigation() {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link fw-semibold text-dark" href="#">
-                            Docs
-                        </a>
+                        <Link className="nav-link fw-semibold text-dark" to={'/signup'}>
+                            Signup
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link fw-semibold text-dark" to={'/login'}>
+                            Login
+                        </Link>
                     </li>
                 </ul>
-
             </div>
         </>
     )

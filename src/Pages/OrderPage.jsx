@@ -36,18 +36,20 @@ function OrderPage() {
 
     return (
         <div className="container mt-5">
-            <div className="row mt-4">
-                <div className="d-flex justify-content-between align-items-center">
-                    <div className="d-flex align-items-center">
-                        <BackButton />
-                        <h3 className="ms-4">Order Place</h3>
-                    </div>
+            <div className="row mt-4 px-4">
+                <div className="">
+                    <BackButton />
+                </div>
+                <div className="d-flex justify-content-between align-items-center mt-5">
+                    <h3 className="ms-4 border">Order Place</h3>
+                    <div className="border">
                     <TotalPrice />
+                    </div>
                 </div>
                 <div className="mt-5">
                     <OrderTable />
                 </div>
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between px-4">
                     <button className="btn bg-color fw-semibold text-light" onClick={() => { BackButtonf() }}>More Shopping</button>
                     <button className="btn bg-color fw-semibold text-light">Order Place</button>
                 </div>
