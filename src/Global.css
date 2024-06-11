@@ -13,3 +13,27 @@
     background-color: #00b02a !important;
     
 }
+.swal2-confirm.custom-button {
+    background-color: #00b02a  !important; /* Tomato color */
+    color: white !important;
+    border-color: none;
+    border: none;
+}
+/* App.css */
+.fullscreen-spin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a semi-transparent background */
+    z-index: 1000 !important; /* Ensure it's on top of other content */
+  }
+  
+  .ant-spin .ant-spin-dot-item {
+    background-color: green; /* Change the spinner color to green */
+  }
+  

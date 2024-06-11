@@ -4,6 +4,7 @@ import './NavbarNavigation.css'
 import { CheckAuthentication } from '../../Services/checkAuthentication'
 import { useEffect, } from 'react'
 import { useGlobalState } from '../../Context/Context'
+import NavbarNavigationDropdown from '../NavbarNavigationDropdown/NavbarNavigationDropdown'
 
 
 function NavbarNavigation() {
@@ -71,9 +72,10 @@ function NavbarNavigation() {
                         checkAuthentication ? (
                             <>
                                 <li className="nav-item">
-                                    <a className="nav-link fw-bold text-dark" href="#">
+                                    <NavbarNavigationDropdown/>
+                                    {/* <a className="nav-link fw-bold text-dark" href="#">
                                         Account
-                                    </a>
+                                    </a> */}
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link fw-bold text-dark" to={'/dashboard'}>

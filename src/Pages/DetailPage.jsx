@@ -83,7 +83,7 @@
 // export default DetailPage
 
 
-
+import Swal from 'sweetalert2';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BackButton from "../Components/BackButton/BackButton";
@@ -126,11 +126,18 @@ function DetailPage() {
         return <Loader />;
     }
     const save = (img, title, price) => {
-        if(checkAuthentication){
+        if (checkAuthentication) {
             AddToCard(img, title, price)
             setProductCounting(productCounting + 1)
         }
-       return alert("Please Signup First")
+        return Swal.fire({
+            title: "Authentication Faild!",
+            text: "First Signup!",
+            icon: "error",
+            customClass: {
+                confirmButton: 'custom-button'
+            }
+        });
     }
     return (
         <div className="container mt-5">

@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom"
 import Home from "./Pages/Home"
 import DetailPage from "./Pages/DetailPage"
 import PageNotFound from "./Components/PageNotFound/PageNotFound"
@@ -18,8 +18,10 @@ import Signup from "./Pages/Signup.jsx"
 import Login from "./Pages/Login.jsx"
 import SignupLoginNavbar from "./Components/SignupLoginNavbar/SignupLoginNavbar.jsx"
 import Footer from "./Components/Footer/Footer.jsx"
+import { useGlobalState } from "./Context/Context.jsx"
 
 function App() {
+  const { userAuth } = useGlobalState()
   const router = createBrowserRouter([
     {
       path: '*',
@@ -27,49 +29,135 @@ function App() {
     },
     {
       path: '/',
-      element: <><Navbar /> <Home /></>
+      element: <>
+        <Navbar /> <Home />
+        {/* {
+          userAuth ? (<>
+          </>) : (<Navigate to={'/signup'} />)
+        } */}
+      </>
     },
     {
       path: '/d/:id',
-      element: <><Navbar /> <DetailPage /></>
+      element: <>
+        <Navbar /> <DetailPage />
+        {/* {
+          userAuth ? (<>
+          </>) : (<Navigate to={'/signup'} />)
+        } */}
+      </>
     }, {
       path: '/o',
-      element: <> <OrderPage /></>
+      element: <>
+        {
+          userAuth ? (<>
+            <Navbar /> <OrderPage />
+          </>) : (<Navigate to={'/signup'} />)
+        }</>
     },
     {
       path: '/dashboard',
-      element: <><DashboardNavbar ><Dashboard /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><Dashboard /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     },
     {
       path: '/customers',
-      element: <><DashboardNavbar ><Customers /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><Customers /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     }, {
       path: '/sellers',
-      element: <><DashboardNavbar ><SellersVendors /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><SellersVendors /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     }, {
       path: '/orders',
-      element: <><DashboardNavbar ><Orders /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><Orders /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     }, {
       path: '/reviews',
-      element: <><DashboardNavbar ><Reviews /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><Reviews /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     }, {
       path: '/products',
-      element: <><DashboardNavbar ><Product /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><Product /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     }, {
       path: '/categories',
-      element: <><DashboardNavbar ><Categories /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><Categories /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     }, {
       path: '/addproduct',
-      element: <><DashboardNavbar ><AddProduct /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><AddProduct /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     }, {
       path: '/addcategory',
-      element: <><DashboardNavbar ><AddCategory /></DashboardNavbar> </>
+      element: <>
+        {
+          userAuth ? (<>
+            <DashboardNavbar ><AddCategory /></DashboardNavbar>
+          </>) : (<Navigate to={'/signup'} />)
+        }
+      </>
     }, {
       path: '/signup',
-      element: <><SignupLoginNavbar /><Signup /><Footer/> </>
+      element: <>
+        <SignupLoginNavbar /><Signup /><Footer />
+        {/* {
+          userAuth ? (<>
+            <Navigate to={'/'} />
+          </>) : (<>  </>)
+        } */}
+      </>
+
     }, {
       path: '/login',
-      element: <><SignupLoginNavbar /><Login /><Footer/> </>
+      element: <>
+        <SignupLoginNavbar /><Login /><Footer />
+        {/* {
+          userAuth ? (<>
+            <Navigate to={'/'} />
+          </>) : (<>  </>)
+        } */}
+      </>
     }
   ])
 

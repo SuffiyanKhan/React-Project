@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
@@ -31,7 +32,11 @@ function PopularProducts() {
             AddToCard(img, title, price)
             setProductCounting(productCounting + 1)
         }
-        return alert("Please Signup First")
+        return Swal.fire({
+            title: "Authentication Faild!",
+            text: "First Signup!",
+            icon: "error"
+        });
     }
 
     return (
