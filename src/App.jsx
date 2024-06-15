@@ -16,8 +16,8 @@ import AddProduct from "./SideMenuPages/AddProduct.jsx"
 import AddCategory from "./SideMenuPages/AddCategory.jsx"
 import Signup from "./Pages/Signup.jsx"
 import Login from "./Pages/Login.jsx"
-import SignupLoginNavbar from "./Components/SignupLoginNavbar/SignupLoginNavbar.jsx"
-import Footer from "./Components/Footer/Footer.jsx"
+// import SignupLoginNavbar from "./Components/SignupLoginNavbar/SignupLoginNavbar.jsx"
+// import Footer from "./Components/Footer/Footer.jsx"
 import { useGlobalState } from "./Context/Context.jsx"
 
 function App() {
@@ -137,10 +137,34 @@ function App() {
           </>) : (<Navigate to={'/signup'} />)
         }
       </>
-    }, {
+    }, 
+    // {
+    //   path: '/signup',
+    //   element: <>
+    //     <SignupLoginNavbar /><Signup /><Footer />
+    //     {/* {
+    //       userAuth ? (<>
+    //         <Navigate to={'/'} />
+    //       </>) : (<>  </>)
+    //     } */}
+    //   </>
+
+    // }, 
+    // {
+    //   path: '/login',
+    //   element: <>
+    //     <SignupLoginNavbar /><Login /><Footer />
+    //   </>
+    //     // {/* {
+    //     //   userAuth ? (<>
+    //     //     <Navigate to={'/'} />
+    //     //   </>) : (<>  </>)
+    //     // } */}
+    // }
+    {
       path: '/signup',
       element: <>
-        <SignupLoginNavbar /><Signup /><Footer />
+        <Signup />
         {/* {
           userAuth ? (<>
             <Navigate to={'/'} />
@@ -148,23 +172,23 @@ function App() {
         } */}
       </>
 
-    }, {
+    }, 
+    {
       path: '/login',
       element: <>
-        <SignupLoginNavbar /><Login /><Footer />
-        {/* {
-          userAuth ? (<>
-            <Navigate to={'/'} />
-          </>) : (<>  </>)
-        } */}
+        <Login />
       </>
+        // {/* {
+        //   userAuth ? (<>
+        //     <Navigate to={'/'} />
+        //   </>) : (<>  </>)
+        // } */}
     }
   ])
 
   return (
     <>
       <RouterProvider router={router} />
-
     </>
   )
 }

@@ -26,7 +26,7 @@ const Slider = () => {
             >
               <SwiperSlide className='abc'>
                 <div className="slide-content">
-                  <img src={Slider1} className='img-fluid rounded-3 slider-img' alt="" />
+                  <img src={Slider1} className='img-fluid rounded-3 slider-img h-100' alt="" />
                   <div className="card-img-overlay mx-5 w-25 ">
                     <div className=" ">
                       <h1 className='fw-bold'>SuperMarket For  Fresh Grocery</h1>
@@ -38,7 +38,7 @@ const Slider = () => {
               </SwiperSlide>
               <SwiperSlide className='abc'>
                 <div className="slide-content">
-                  <img src={Slider2} className='img-fluid rounded-3 slider-img' alt="" />
+                  <img src={Slider2} className='img-fluid rounded-3 slider-img h-100' alt="" />
                   <div className="card-img-overlay mx-5 w-25 ">
                     <div className="">
                       <h1 className='fw-bold'>Free Shipping on  order over <span style={{ color: '#0cac0c' }}>$100</span></h1>

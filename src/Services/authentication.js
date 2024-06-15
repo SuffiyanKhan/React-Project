@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../Configuration/Firebase";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
@@ -14,6 +14,19 @@ export const SignupAuthentication = async (data) => {
             timestamp: serverTimestamp()
         });
         return user;
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = errorCode.slice(5).toUpperCase();
+        const errMessage = errorMessage.replace(/-/g, " ");
+        return errMessage
+    }
+}
+
+export const LoginAuthentication = async (data) => {
+    try {
+        const loginUser=await signInWithEmailAndPassword(auth, data.lemail, data.lpassword)
+       const userLogin= loginUser.user;
+       return userLogin
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = errorCode.slice(5).toUpperCase();
