@@ -4,10 +4,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import logo from '../../assets/logo.svg'
 import './SideBar.css'
 import { Link } from 'react-router-dom';
-import { useGlobalState } from '../../Context/Context';
 
 function SideBar() {
-    const { checkAuthentication } = useGlobalState()
 
     const [show, setShow] = useState(false);
 
@@ -84,54 +82,25 @@ function SideBar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link fw-bold text-dark" to={'/o'}>
-                                    Shop Cart
+                                <Link className="nav-link fw-bold text-dark" to={'/about'}>
+                                    About
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link fw-bold text-dark " aria-current="page"  >
-                                    About us
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link fw-bold text-dark " aria-current="page"  >
+                                <Link className="nav-link fw-bold text-dark " aria-current="page" to={'/blogs'} >
                                     Blogs
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link fw-bold text-dark " aria-current="page"  >
+                                <Link className="nav-link fw-bold text-dark " aria-current="page" to={'/contact'} >
                                     Contact Us
                                 </Link>
                             </li>
-                            {
-                                checkAuthentication ? (
-                                    <>
-                                        <li className="nav-item">
-                                            <a className="nav-link fw-bold text-dark" href="#">
-                                                Account
-                                            </a>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link className="nav-link fw-bold text-dark" to={'/dashboard'}>
-                                                Dashboard
-                                            </Link>
-                                        </li>
-                                    </>
-                                ) : (
-                                    <>
-                                        <li className="nav-item">
-                                            <Link className="nav-link fw-bold text-dark" to={'/signup'}>
-                                                Signup
-                                            </Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link className="nav-link fw-bold text-dark" to={'/login'}>
-                                                Login
-                                            </Link>
-                                        </li>
-                                    </>
-                                )
-                            }
+                            <li className="nav-item">
+                                <Link className="nav-link fw-bold text-dark" to={'/dashboard'}>
+                                    Dashboard
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </Offcanvas.Body>

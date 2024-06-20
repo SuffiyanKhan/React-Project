@@ -17,6 +17,19 @@ function SideMenuList() {
       <div className="px-3">
         <div>
           <Link
+            to="/"
+            className={`side-menu-list text-dark text-start text-decoration-none p-3 btn rounded-3 border-none w-100 ${activeLink === '/' ? 'active' : ''
+              }`}
+            onClick={() => handleLinkClick('/')}
+          >
+            <span className="me-2">
+              <i className="fa-solid fa-house"></i>
+            </span>
+            Home
+          </Link>
+        </div>
+        <div>
+          <Link
             to="/dashboard"
             className={`side-menu-list text-dark text-start text-decoration-none p-3 btn rounded-3 border-none w-100 ${activeLink === '/dashboard' ? 'active' : ''
               }`}

@@ -83,7 +83,6 @@
 // export default DetailPage
 
 
-import Swal from 'sweetalert2';
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import BackButton from "../Components/BackButton/BackButton";
@@ -95,7 +94,7 @@ function DetailPage() {
     const { id } = useParams(); // Corrected destructuring
     const [data, setData] = useState(null);
     const [imagesLoaded, setImagesLoaded] = useState(false); // State to handle image loading
-    const { productCounting, setProductCounting, checkAuthentication } = useGlobalState()
+    const { productCounting, setProductCounting } = useGlobalState()
 
     useEffect(() => {
         (async () => {
@@ -126,18 +125,8 @@ function DetailPage() {
         return <Loader />;
     }
     const save = (img, title, price) => {
-        if (checkAuthentication) {
-            AddToCard(img, title, price)
-            setProductCounting(productCounting + 1)
-        }
-        return Swal.fire({
-            title: "Authentication Faild!",
-            text: "First Signup!",
-            icon: "error",
-            customClass: {
-                confirmButton: 'custom-button'
-            }
-        });
+        AddToCard(img, title, price)
+        setProductCounting(productCounting + 1)
     }
     return (
         <div className="container mt-5">

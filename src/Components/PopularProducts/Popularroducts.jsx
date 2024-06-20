@@ -1,4 +1,3 @@
-import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from '../Loader/Loader';
@@ -7,7 +6,7 @@ import { AddToCard } from '../../Services/addToCard';
 import { useGlobalState } from '../../Context/Context';
 
 function PopularProducts() {
-    const { productCounting, setProductCounting, checkAuthentication } = useGlobalState()
+    const { productCounting, setProductCounting } = useGlobalState()
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
@@ -28,15 +27,8 @@ function PopularProducts() {
 
     }
     const save = (img, title, price) => {
-        if (checkAuthentication) {
-            AddToCard(img, title, price)
-            setProductCounting(productCounting + 1)
-        }
-        return Swal.fire({
-            title: "Authentication Faild!",
-            text: "First Signup!",
-            icon: "error"
-        });
+        AddToCard(img, title, price)
+        setProductCounting(productCounting + 1)
     }
 
     return (
@@ -44,7 +36,7 @@ function PopularProducts() {
             <div className="row">
                 {product.map((data, index) => (
                     <div className="col-lg-3 col-md-6 col-sm-12" key={index}>
-                        <div className="card mt-3">
+                        <div className="cards mt-3">
                             <img
                                 src={data.thumbnail}
                                 className="card-img-top"
